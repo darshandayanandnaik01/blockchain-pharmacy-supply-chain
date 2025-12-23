@@ -41,26 +41,17 @@ Each batch follows a **strictly enforced lifecycle** controlled entirely by a sm
 
 ## 🏗️ System Architecture
 
-The application follows a **fully decentralized architecture** 🌐
+The system follows a **fully decentralized blockchain architecture** 🌐 where
+all supply-chain operations are executed and validated by smart contracts without
+any centralized backend.
 
-```
+<p align="center">
+  <img src="screenshots/system-architecture.png" width="800"/>
+</p>
 
-User
-│
-│ 🦊 MetaMask (Transaction Signing)
-│
-Frontend (HTML / CSS / JavaScript)
-│
-│ ABI + Contract Address
-│
-Smart Contract (Solidity)
-│
-Blockchain Network (Ganache)
-
-```
-
-🟢 No backend server  
-🟢 Blockchain acts as the **single source of truth**
+<p align="center">
+  <i>Figure: Blockchain-based Pharmaceutical Supply Chain System Architecture</i>
+</p>
 
 ---
 
@@ -90,6 +81,17 @@ blockchain-pharmacy-supply-chain/
 │   └── style.css
 │
 ├── screenshots/
+│   ├── system-architecture.png
+│   ├── 01-ganache.png
+│   ├── 02-metamask.png
+│   ├── 03-admin-roles.png
+│   ├── 04-supplier-create.png
+│   ├── 05-transporter.png
+│   ├── 06-manufacturer.png
+│   ├── 07-distributor.png
+│   ├── 08-pharmacy.png
+│   └── 09-tracking.png
+│
 ├── docs/
 │
 ├── README.md
@@ -140,6 +142,37 @@ blockchain-pharmacy-supply-chain/
 
 ---
 
+## 📸 Results & Screenshots
+
+### Ganache Local Blockchain
+![Ganache](screenshots/01-ganache.png)
+
+### MetaMask Wallet Connection
+![MetaMask](screenshots/02-metamask.png)
+
+### Admin – Role Assignment
+![Admin](screenshots/03-admin-roles.png)
+
+### Supplier – Create Medicine Batch
+![Supplier](screenshots/04-supplier-create.png)
+
+### Transporter – Delivery Confirmation
+![Transporter](screenshots/05-transporter.png)
+
+### Manufacturer – Dispatch to Distributor
+![Manufacturer](screenshots/06-manufacturer.png)
+
+### Distributor – Workflow
+![Distributor](screenshots/07-distributor.png)
+
+### Pharmacy – Verify & Sell
+![Pharmacy](screenshots/08-pharmacy.png)
+
+### Batch Tracking Output
+![Tracking](screenshots/09-tracking.png)
+
+---
+
 ## 🔍 Batch Verification
 
 Users can verify any batch by entering its **batch ID** 🔎 to view:
@@ -166,7 +199,8 @@ This enables transparency for **consumers**, **pharmacies**, and **regulators**.
 
 ## ⚠️ Configuration Note
 
-The deployed smart contract **address and ABI are intentionally excluded** from this repository 🔒.
+The deployed smart contract **address and ABI are intentionally excluded** from
+this repository 🔒.
 
 After deploying the contract locally:
 1. 📋 Copy the deployed contract address  
@@ -200,7 +234,6 @@ This ensures **security and environment isolation**.
 
 **Darshan Dayanand Naik**  
 🚀 Aspiring Artificial Intelligence & Data Science Professional  
-🤖 Machine Learning Enthusiast | Innovating with Data-Driven Insights  
 
 📍 Bangalore, India  
 🔗 GitHub: https://github.com/darshandayanandnaik01  
