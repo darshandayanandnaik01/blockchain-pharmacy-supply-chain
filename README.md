@@ -1,10 +1,26 @@
 # 💊🔗 Blockchain-Native Pharmaceutical Supply Chain Tracker
 
+![Solidity](https://img.shields.io/badge/Solidity-^0.8.x-363636?logo=solidity)
+![Ethereum](https://img.shields.io/badge/Blockchain-Ethereum-3C3C3D?logo=ethereum)
+![MetaMask](https://img.shields.io/badge/Wallet-MetaMask-E2761B?logo=metamask&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Status](https://img.shields.io/badge/Status-Active-success)
+
 Pharmaceutical supply chains involve multiple stakeholders and are highly vulnerable to **counterfeit drugs**, **manual record manipulation**, and **lack of end-to-end visibility**.
 
 This project implements a **blockchain-native pharmaceutical supply chain tracking system** where every medicine batch is recorded **immutably on the blockchain**, ensuring **transparency**, **traceability**, and **trust** — without relying on centralized databases or intermediaries.
 
 Each batch follows a **strictly enforced lifecycle** controlled entirely by a smart contract ⚙️.
+
+---
+
+## 🎯 Project Goals
+
+- Prevent counterfeit drugs  
+- Ensure end-to-end traceability  
+- Remove centralized intermediaries  
+- Enforce business logic on-chain  
+- Enable public batch verification  
 
 ---
 
@@ -17,6 +33,20 @@ Each batch follows a **strictly enforced lifecycle** controlled entirely by a sm
 🦊 Decentralized authentication via MetaMask  
 ⚡ Real-time batch status verification  
 ❌ No backend server or centralized database  
+
+---
+
+## 🤔 Why Blockchain?
+
+Traditional pharmaceutical supply chains rely on centralized databases, which are prone to **data tampering**, **single points of failure**, and **counterfeit injection**.
+
+Blockchain enables:
+- 🔒 Immutable audit trails  
+- 🔍 Trustless verification  
+- 🌐 Decentralized control  
+- 🧠 Smart contract–enforced rules  
+
+This system leverages **Ethereum smart contracts** to enforce supply-chain logic directly **on-chain**, eliminating the need for intermediaries.
 
 ---
 
@@ -41,9 +71,9 @@ Each batch follows a **strictly enforced lifecycle** controlled entirely by a sm
 
 ## 🏗️ System Architecture
 
-The system follows a **fully decentralized blockchain architecture** 🌐 where
-all supply-chain operations are executed and validated by smart contracts without
-any centralized backend.
+The system follows a **fully decentralized blockchain architecture** where
+all supply-chain operations are executed and validated by smart contracts,
+without any centralized backend.
 
 <p align="center">
   <img src="screenshots/system-architecture.png" width="800"/>
@@ -52,6 +82,20 @@ any centralized backend.
 <p align="center">
   <i>Figure: Blockchain-based Pharmaceutical Supply Chain System Architecture</i>
 </p>
+
+---
+
+## 🔑 Role Permissions
+
+| Role | Permissions |
+|----|----|
+| Admin | Deploy contract, assign role addresses |
+| Supplier | Create medicine batches |
+| Transporter | Deliver batches to manufacturer |
+| Manufacturer | Dispatch batches to distributor |
+| Distributor | Forward batches to pharmacy |
+| Pharmacy | Verify & mark batches as sold |
+| Public User | Track batch authenticity |
 
 ---
 
@@ -93,7 +137,6 @@ blockchain-pharmacy-supply-chain/
 │   └── 09-tracking.png
 │
 ├── docs/
-│
 ├── README.md
 ├── LICENSE
 └── .gitignore
@@ -117,28 +160,11 @@ blockchain-pharmacy-supply-chain/
 
 ## 🔧 Setup & Execution
 
-### 1️⃣ Start Ganache
-- Launch Ganache and create a workspace  
-- Note the RPC URL and account addresses  
-
-### 2️⃣ Configure MetaMask
-- Add Ganache as a custom network  
-- Import accounts using private keys from Ganache  
-
-### 3️⃣ Deploy Smart Contract
-- Open `PharmacySupplyChain.sol` in **Remix IDE**  
-- Compile using Solidity **^0.8.x**  
-- Deploy using **Injected Provider – MetaMask**  
-- Copy the deployed **contract address & ABI**
-
-### 4️⃣ Configure Frontend
-- Open `frontend/app.js`  
-- Paste the deployed contract address  
-- Paste the ABI from Remix  
-
-### 5️⃣ Run Application
-- Open `frontend/index.html` in a browser  
-  *(or use Live Server)*
+1️⃣ Deploy `PharmacySupplyChain.sol` using Remix & MetaMask  
+2️⃣ Copy deployed **contract address & ABI**  
+3️⃣ Paste both into `frontend/app.js`  
+4️⃣ Open `frontend/index.html` in browser  
+5️⃣ Interact using different role accounts  
 
 ---
 
@@ -173,17 +199,33 @@ blockchain-pharmacy-supply-chain/
 
 ---
 
-## 🔍 Batch Verification
+## 🧪 Test Scenarios
 
-Users can verify any batch by entering its **batch ID** 🔎 to view:
+- Valid batch lifecycle execution  
+- Invalid role access (reverted)  
+- Incorrect state transitions blocked  
+- Public batch verification  
+- Multiple batches tracked simultaneously  
 
-- 💊 Medicine name  
-- 🏭 Manufacturing date  
-- ⏳ Expiry date  
-- 👤 Current owner  
-- 🔄 Current lifecycle state  
+---
 
-This enables transparency for **consumers**, **pharmacies**, and **regulators**.
+## 📜 Smart Contract Highlights
+
+- Finite-state machine for lifecycle control  
+- Strict role-based modifiers  
+- On-chain validation of transitions  
+- Event-driven traceability  
+- No external dependencies  
+
+---
+
+## 💡 Potential Use Cases
+
+- Pharmaceutical manufacturers  
+- Drug distributors & wholesalers  
+- Regulatory compliance auditing  
+- Consumer authenticity verification  
+- Supply-chain transparency platforms  
 
 ---
 
@@ -193,47 +235,43 @@ This enables transparency for **consumers**, **pharmacies**, and **regulators**.
 - ❌ No hard-coded credentials or private keys  
 - ✍️ Transactions signed via MetaMask  
 - 🧾 Immutable blockchain data storage  
-- 🚫 Frontend manipulation **cannot bypass contract rules**
 
 ---
 
 ## ⚠️ Configuration Note
 
-The deployed smart contract **address and ABI are intentionally excluded** from
-this repository 🔒.
+The deployed smart contract **address and ABI are intentionally excluded**
+from this repository.
 
-After deploying the contract locally:
-1. 📋 Copy the deployed contract address  
-2. 📋 Copy the ABI from Remix  
-3. ✏️ Paste both into `frontend/app.js`
-
-This ensures **security and environment isolation**.
+After deploying locally:
+1. Copy contract address  
+2. Copy ABI from Remix  
+3. Paste both into `frontend/app.js`
 
 ---
 
 ## ⚠️ Limitations
 
-- 🧪 Designed for local blockchain testing (Ganache)  
-- 🌡️ No IoT or cold-chain integration yet  
-- 📂 No off-chain document storage  
-- 🎯 UI optimized for demonstration, not production scale  
+- Local blockchain (Ganache) only  
+- No IoT or cold-chain integration yet  
+- UI optimized for demo purposes  
 
 ---
 
 ## ✨ Future Enhancements
 
-- 📱 QR / RFID-based consumer verification  
-- 🌡️ IoT-enabled cold-chain monitoring  
-- 📦 IPFS integration for certificates & documents  
-- 📲 Mobile application support  
-- 🌍 Deployment to public testnets (Sepolia / Polygon)  
+- QR / RFID-based verification  
+- IoT-enabled cold-chain monitoring  
+- IPFS document storage  
+- Mobile application support  
+- Deployment to public testnets  
 
 ---
 
 ## 👨‍💻 Author
 
 **Darshan Dayanand Naik**  
-🚀 Aspiring Artificial Intelligence & Data Science Professional  
+🚀 Artificial Intelligence & Data Science Professional  
 
 📍 Bangalore, India  
 🔗 GitHub: https://github.com/darshandayanandnaik01  
